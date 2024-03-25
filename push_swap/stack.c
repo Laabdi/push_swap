@@ -2,11 +2,11 @@
 
 // Get stack last element
 
-t_List	*get_stack_bottom(t_list *stack)
+t_list	*get_stack_bottom(t_list *stack)
 {
     while(stack && stack->next != NULL)
     {
-        t_list = t_list->next;
+        stack = stack->next;
     }
     return(stack);
 }
@@ -30,3 +30,32 @@ int	get_stack_size(t_list	*stack)
     }
     return(size);
 }
+void	stack_add_bottom(t_list **stack, t_list *new)
+{
+    t_list *tail;
+	if(!new)
+	return;
+    if(!*stack)
+	{
+		*stack = new;
+		return;
+	}
+    tail = get_stack_bottom(*stack);
+	tail->next = new;
+}
+
+t_list *new_node(t_list *stack)
+{
+    t_list *new;
+    new = malloc(sizeof(new));
+    if(!new)
+    return (NULL);
+    new->index = 0;
+    new->value =-1;
+    new->cost_a =-1;
+    new->cost_b =-1;
+    new->target_pos =-1;
+    new->next = NULL;
+    return (new);
+}
+

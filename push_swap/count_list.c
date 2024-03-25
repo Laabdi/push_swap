@@ -6,7 +6,7 @@ typedef struct s_list{
 int count_nodes(t_list *lst)
 {
     int count = 0;
-    t_list ptr;
+    t_list *ptr;
     ptr = lst;
     while(ptr != NULL)
     {

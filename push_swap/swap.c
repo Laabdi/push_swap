@@ -14,18 +14,18 @@ static void	swap(t_list *stack)
 void	do_sa(t_list **stack_a)
 {
     swap(*stack_a);
-    printf("sa\n")
+    printf("sa\n");
 }
 
 void	do_sb(t_list **stack_b)
 {
     swap(*stack_b);
-    printf("sb\n")
+    printf("sb\n");
 }
 
 void	do_ss(t_list **stack_a, t_list **stack_b)
 {
     swap(*stack_a);
     swap(*stack_b);
-    printf("ss\n")
+    printf("ss\n");
 }
