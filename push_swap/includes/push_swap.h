@@ -1,14 +1,13 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <limits.h>
-# include <stdio.h>
-# include <string.h>
+#include <limits.h>
+#include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 typedef struct s_list{
-    void *content;
     int value;
     int index;
     int pos;
@@ -20,9 +19,10 @@ typedef struct s_list{
 
 
 //stack_helpers
+char	*ft_strdup(const char *str);
 char	**ft_split(char const *s, char c);
-t_list *fill_stack(int ac, char **str);
-void    assign_index(t_list **stack_a, int stack_size);
+t_list *fill_stack( char **str);
+void    assign_index(t_list *stack_a, int stack_size);
 int     get_stack_size(t_list	*stack);
 t_list	*get_stack_before_bottom(t_list *stack);
 t_list	*get_stack_bottom(t_list *stack);
@@ -41,8 +41,16 @@ void    do_rrr(t_list **stack_a,t_list **stack_b);
 void	do_pa(t_list **stack_a, t_list **stack_b);
 void	do_pb(t_list **stack_a, t_list **stack_b);
 //sorting
+int ft_abs(int nb);
 int	is_sorted(t_list *stack);
 void push_swap(t_list **stack_a,t_list **stack_b, int stack_size);
+void    do_move(t_list **stack_a,t_list **stack_b,int cost_a,int cost_b);
+void sort_tiny(t_list **stack);
+void	sort(t_list **stack_a, t_list **stack_b);
+void    do_cheapest_move(t_list **stack_a,t_list **stack_b);
+void target_pos(t_list **stack_a,t_list **stack_b);
+int get_lowest_index_pos(t_list **stack);
+void calculate_cost(t_list **stack_a,t_list **stack_b);
 //error handlers
 void    ft_free(char **arr);
 void    ft_error_handler(void);
@@ -58,5 +66,6 @@ int ft_is_sign(char nb);
 int ft_is_digit(char nb);
 int num_cmp(char *s1,char *s2);
 char **splited(char **av);
+char	*ft_strjoin(char  *s1, char  *s2);
 
 #endif

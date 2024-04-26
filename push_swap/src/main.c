@@ -1,27 +1,55 @@
 #include "push_swap.h"
+static void free_str_array(char **arr) {
+    if (arr) {
+        int i = 0;
+        while (arr[i] != NULL) {
+            free(arr[i]);
+            i++;
+        }
+        free(arr);
+    }
+}
 
-int main(int ac, char **av)
+int main(int ac, char **av) 
 {
     t_list *stack_a;
     t_list *stack_b;
-    char **nums;
     int stack_size;
-    if(ac == 1 || (ac == 2 && !av[1][0]))
-    ft_error_handler();
-    if(ac == 2)
-    ft_split(av[1], ' ');
-    stack_b = NULL;
+    char **nums = NULL;
+    if (ac < 2)
+        return 0;
     nums = splited(av);
-    if(check_valid(nums))
-    {
-        stack_a = fill_stack(ac,nums);
-        stack_size = get_stack_size(stack_a);
-        assign_index(&stack_a,stack_size);
-        push_swap(&stack_a,&stack_b,stack_size);
-        free_stack(&stack_a);
-        free_stack(&stack_b);
-        return(0);
+    // int i = 0;
+    // // while(nums[i++])
+    // // printf("%s .",nums[i]);
+    if (!nums)
+        return 1;
+    if (!check_valid(nums)) {
+        free_str_array(nums);
+        exit_error(NULL,NULL);
     }
-    else
-    ft_error_handler();
+    stack_b = NULL;
+    stack_a = fill_stack(nums);
+    if (!stack_a) 
+    exit_error(&stack_a,&stack_b);
+    stack_size = get_stack_size(stack_a);
+    assign_index(stack_a, stack_size);
+    //  while (stack_a) {
+    //     printf("%d ", stack_a->index); 
+    //     stack_a = stack_a->next;
+    // }
+    push_swap(&stack_a, &stack_b, stack_size);
+        while (stack_a) {
+        printf("%d ", stack_a->value);
+        stack_a = stack_a->next;
+    }
+    // free_stack(&stack_a);
+    // free_stack(&stack_b);
+    //      while (stack_a) {
+    //     printf("%d ", stack_a->index); 
+    //     stack_a = stack_a->next;
+    // }
+    // // free_str_array(nums);
+    return 0;
 }
+

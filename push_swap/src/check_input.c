@@ -8,6 +8,45 @@ int ft_strlen( char *s)
 	}
 	return(i);
 }
+static void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	const unsigned char	*ptr;
+	unsigned char		*d;
+	size_t				i;
+
+	if (dest == src)
+		return (dest);
+	i = 0;
+	ptr = (const unsigned char *)src;
+	d = (unsigned char *)dest;
+	if (n == 0)
+		return (d);
+	if (n > 0)
+	{
+		while (n-- > 0)
+		{
+			d[i] = ptr[i];
+			i++;
+		}
+		return ((char *)dest);
+	}
+	return (NULL);
+}
+char	*ft_strdup(const char *str)
+{
+	int		n;
+	char	*ptr;
+
+	n = ft_strlen((char *)str);
+	ptr = (char *)malloc(n + 1);
+	if (ptr != NULL)
+	{
+		ft_memcpy(ptr, str, n);
+		ptr[n] = '\0';
+		return (ptr);
+	}
+	return (NULL);
+}
 int	arg_is_zero(char *av)
 {
 	int	i;
@@ -32,28 +71,6 @@ int check_number(char *s1)
         return(0);
     return(1);
 }
-
-// int check_space(char **s)
-// {
-//     int i;
-//     int j;
-//     i = 0;
-//     while(s[i])
-//     {
-//         j = 0;
-// 		while(s[i][j])
-// 		{
-//         if(s[i][j] != 32)
-//             break;
-// 			j++;
-// 		}
-// 		if(s[i][j]
-// 	i++;
-//     }
-//     if(!s[i])
-//         return 1;
-	
-// }
 
 int check_duplicates(char **s1)
 {
@@ -93,18 +110,23 @@ int check_valid(char **s)
 return(1);
 }
 
-char **splited(char **av)
-{
-	char **argv;
-	char *temp;
-	int i;
-	i = 1;
-	while(av[i])
-	{
-			temp = ft_strjoin(temp, av[i]);
-			temp = ft_strjoin(temp," ");
-		i++;
-	}
-	argv = ft_split(temp,' ');
-	return(argv);
+char **splited(char **av) {
+    char **argv = NULL;
+    char *temp = NULL;
+    int i = 1;
+
+    if (!av || !av[1])
+        return NULL;
+    temp = ft_strdup("");
+    if (!temp)
+        return NULL;
+    while (av[i]) {
+        char *new_temp = ft_strjoin(temp, av[i]);
+        temp = ft_strjoin(new_temp, " ");
+        if (!temp)
+            return NULL;
+        i++;
+    }
+    argv = ft_split(temp, ' ');
+    return argv;
 }

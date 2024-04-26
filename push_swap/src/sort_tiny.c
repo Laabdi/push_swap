@@ -4,11 +4,12 @@ static int	find_highest_index(t_list *stack)
 {
     int index;
     index  = stack->index;
-    while(stack)
+    t_list *tmp = stack;
+    while(tmp)
     {
-        if(index > stack->index)
-        index = stack->index;
-        stack = stack->next;
+        if(index < tmp->index)
+        index = tmp->index;
+        tmp = tmp->next;
     }
     return(index);
 }
@@ -18,6 +19,7 @@ void sort_tiny(t_list **stack)
     return ;
     int highest;
     highest = find_highest_index(*stack);
+    // printf("highest index:%d\n",highest);
     if((*stack)->index == highest)
     do_ra(stack);
     else if((*stack)->next->index == highest)

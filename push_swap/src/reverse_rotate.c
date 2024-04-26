@@ -15,16 +15,16 @@ static void	rev_rotate(t_list **stack)
 void do_rra(t_list **stack)
 {
     rev_rotate(stack);
-    printf("rra");
+    printf("rra\n");
 }
 void do_rrb(t_list **stack)
 {
     rev_rotate(stack);
-    printf("rrb");
+    printf("rrb\n");
 }
 void do_rrr(t_list **stack_a,t_list **stack_b)
 {
     rev_rotate(stack_a);
     rev_rotate(stack_b);
-    printf("rrr");
+    printf("rrr\n");
 }

@@ -32,7 +32,7 @@ int get_lowest_index_pos(t_list **stack)
     }
     return(lowest_pos);
 }
-int	get_target(t_list **stack_a, int b_index, int target_index, int target_pos)
+static int	get_target(t_list **stack_a, int b_index, int target_index, int target_pos)
 {
     t_list *tmp_a;
     tmp_a = *stack_a;

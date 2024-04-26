@@ -34,7 +34,12 @@ int num_cmp(char *s1,char *s2)
     }
     return((unsigned char)s1[i] - (unsigned char) s2[j]);
 }
-
+int ft_abs(int nb)
+{
+    if(nb < 0)
+    return(nb * -1);
+    return(nb);   
+}
 
 // int main ()
 // {
