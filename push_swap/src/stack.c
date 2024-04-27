@@ -17,19 +17,19 @@ t_list	*get_stack_before_bottom(t_list *stack)
 return(stack);
 }
 
-int	get_stack_size(t_list *stack_a)
+int	get_stack_size(t_list	*stack)
 {
-	int		i;
-	t_list	*tmp;
+	int	size;
 
-	tmp = stack_a;
-	i = 0;
-	while (tmp)
+	size = 0;
+	if (!stack)
+		return (0);
+	while (stack)
 	{
-		tmp = tmp->next;
-		i++;
+		stack = stack->next;
+		size++;
 	}
-	return (i);
+	return (size);
 }
 void	stack_add_bottom(t_list **stack, t_list *new)
 {
@@ -48,7 +48,7 @@ void	stack_add_bottom(t_list **stack, t_list *new)
 t_list *new_node(int value)
 {
     t_list *new;
-    new = malloc(sizeof(t_list));
+    new = malloc(sizeof * new);
     if(!new)
     return (NULL);
     new->index = 0;

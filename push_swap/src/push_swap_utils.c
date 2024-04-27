@@ -37,7 +37,7 @@ int num_cmp(char *s1,char *s2)
 int ft_abs(int nb)
 {
     if(nb < 0)
-    return(nb * -1);
+        return(nb * -1);
     return(nb);   
 }
 

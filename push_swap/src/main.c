@@ -30,6 +30,7 @@ int main(int ac, char **av)
     }
     stack_b = NULL;
     stack_a = fill_stack(nums);
+    // free_str_array(nums);
     if (!stack_a) 
     exit_error(&stack_a,&stack_b);
     stack_size = get_stack_size(stack_a);
@@ -49,7 +50,6 @@ int main(int ac, char **av)
     //     printf("%d ", stack_a->index); 
     //     stack_a = stack_a->next;
     // }
-    // // free_str_array(nums);
     return 0;
 }
 

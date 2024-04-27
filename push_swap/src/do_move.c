@@ -2,7 +2,7 @@
 
 static void    do_rev_rotate_both(t_list **stack_a,t_list **stack_b,int *cost_a,int *cost_b)
 {
-    while(cost_a < 0 && cost_b < 0)
+    while(*cost_a < 0 && *cost_b < 0)
     {
         (*cost_a)++;
         (*cost_b)++;
@@ -11,7 +11,7 @@ static void    do_rev_rotate_both(t_list **stack_a,t_list **stack_b,int *cost_a,
 }
 static void    do_rotate_both(t_list **stack_a,t_list **stack_b,int *cost_a,int *cost_b)
 {
-    while(cost_a > 0 && cost_b > 0)
+    while(*cost_a > 0 && *cost_b > 0)
     {
         (*cost_a)--;
         (*cost_b)--;
