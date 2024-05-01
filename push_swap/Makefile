@@ -14,7 +14,8 @@ SRC		= main.c \
 		get_position.c calculate_cost.c do_move.c \
 		spliting_utils.c \
 		ft_error_handler.c \
-		push_swap.c
+		push_swap.c \
+		helpers.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))

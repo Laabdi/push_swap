@@ -6,17 +6,12 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:32:10 by mcombeau          #+#    #+#             */
-/*   Updated: 2024/04/27 16:37:38 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:48:04 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* push_all_save_three:
-*	Pushes all the elements of stack a into stack b, except the three last ones.
-*	Pushes the smaller values first, and then the larger values to help with
-*	sorting efficiency.
-*/
 static void	push_all_save_three(t_list **stack_a, t_list **stack_b)
 {
 	int	stack_size;
@@ -26,7 +21,7 @@ static void	push_all_save_three(t_list **stack_a, t_list **stack_b)
 	stack_size = get_stack_size(*stack_a);
 	pushed = 0;
 	i = 0;
-	while (stack_size >= 6 && i < stack_size && pushed < stack_size / 2)
+	while (stack_size > 6 && i < stack_size && pushed < stack_size / 2)
 	{
 		if ((*stack_a)->index <= stack_size / 2)
 		{
@@ -37,30 +32,13 @@ static void	push_all_save_three(t_list **stack_a, t_list **stack_b)
 			do_ra(stack_a);
 		i++;
 	}
-	while (stack_size - pushed >= 3)
+	while (stack_size - pushed > 3)
 	{
 		do_pb(stack_a, stack_b);
 		pushed++;
 	}
-	// 	t_list *tmpb = *stack_b;
-	//         while (tmpb) {
-    //     printf("stack_b : %d ", tmpb->value); // Assuming the value field of t_list contains integers
-    //     tmpb = tmpb->next;
-    // }
-	// printf("\n");
-	// t_list *tmp = *stack_a;
-	//         while (tmp) {
-    //     printf("stack_a :%d ", tmp->value); // Assuming the value field of t_list contains integers
-    //     tmp = tmp->next;
-    // }
 }
 
-/* shift_stack:
-*	After the bulk of the stack is sorted, shifts stack a until the lowest
-*	value is at the top. If it is in the bottom half of the stack, reverse
-*	rotate it into position, otherwise rotate until it is at the top of the
-*	stack.
-*/
 static void	shift_stack(t_list **stack_a)
 {
 	int	lowest_pos;
@@ -86,13 +64,6 @@ static void	shift_stack(t_list **stack_a)
 	}
 }
 
-/* sort:
-*	Sorting algorithm for a stack larger than 3.
-*		Push everything but 3 numbers to stack B.
-*		Sort the 3 numbers left in stack A.
-*		Calculate the most cost-effective move.
-*		Shift elements until stack A is in order.
-*/
 void	sort(t_list **stack_a, t_list **stack_b)
 {
 	push_all_save_three(stack_a, stack_b);
@@ -100,7 +71,7 @@ void	sort(t_list **stack_a, t_list **stack_b)
 	while (*stack_b)
 	{
 		target_pos(stack_a, stack_b);
-		calculate_cost(stack_a, stack_b);
+		get_cost(stack_a, stack_b);
 		do_cheapest_move(stack_a, stack_b);
 	}
 	if (!is_sorted(*stack_a))
