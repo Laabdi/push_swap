@@ -80,20 +80,23 @@ OBJ_PATH = obj/
 OBJ_BONUS = $(BONUS:%.c=$(OBJ_PATH)%.o)
 OBJ = $(SRC:%.c=$(OBJ_PATH)%.o)
 
-all: directories $(NAME)
-
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $^ -o $@
 	@echo "Mandatory Part: Compilation done."
-
-bonus: $(NAME_BONUS)
 
 $(NAME_BONUS): $(OBJ_BONUS)
 	$(CC) $(CFLAGS) $^ -o $@
 	@echo "Bonus Part: Compilation done."
 
-$(OBJ_PATH)%.o: %.c | $(OBJ_PATH)
+$(OBJ_PATH)%.o: %.c | directories
 	$(CC) $(CFLAGS) -c $< -o $@
+
+all: directories $(NAME)
+
+
+bonus: $(NAME_BONUS)
+
+
 
 directories:
 	mkdir -p $(OBJ_PATH)

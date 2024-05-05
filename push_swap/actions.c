@@ -6,7 +6,7 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 12:09:10 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/02 18:33:24 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:30:39 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	do_ra_bonus(t_list **stack_a)
 {
 	if (!(*stack_a) || !((*stack_a)->next))
 		return ;
-	rotate(stack_a);
+	do_rotate(stack_a);
 	printf("ra\n");
 }
 
@@ -36,7 +36,7 @@ void	do_rb_bonus(t_list **stack_b)
 {
 	if (!(*stack_b) || !((*stack_b)->next))
 		return ;
-	rotate(stack_b);
+	do_rotate(stack_b);
 	printf("rb\n");
 }
 
@@ -45,8 +45,8 @@ void	do_rr_bonus(t_list **stack_a, t_list **stack_b)
 	if ((!(*stack_a) || !((*stack_a)->next)) && (!(*stack_b)
 			|| !((*stack_b)->next)))
 		return ;
-	rotate(stack_a);
-	rotate(stack_b);
+	do_rotate(stack_a);
+	do_rotate(stack_b);
 	printf("rr\n");
 }
 static void	do_rev_rotate(t_list **stack)
@@ -65,19 +65,19 @@ static void	do_rev_rotate(t_list **stack)
 
 void	do_rra_bonus(t_list **stack)
 {
-	rev_rotate(stack);
+	do_rev_rotate(stack);
 	printf("rra\n");
 }
 
 void	do_rrb(t_list **stack)
 {
-	rev_rotate(stack);
+	do_rev_rotate(stack);
 	printf("rrb\n");
 }
 
 void	do_rrr(t_list **stack_a, t_list **stack_b)
 {
-	rev_rotate(stack_a);
-	rev_rotate(stack_b);
+	do_rev_rotate(stack_a);
+	do_rev_rotate(stack_b);
 	printf("rrr\n");
 }
