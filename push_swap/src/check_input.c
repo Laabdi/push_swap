@@ -6,12 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:00:25 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/01 16:01:48 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:23:06 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
+#include "../includes/push_swap.h"
 
 int	arg_is_zero(char *av)
 {
@@ -84,11 +83,12 @@ int	check_valid(char **s)
 
 char	**splited(char **av)
 {
-	char **argv = NULL;
-	char *temp = NULL;
-	char *new_temp = NULL;
-	int i = 1;
+	char	**argv;
+	char	*temp;
+	char	*new_temp;
+	int		i;
 
+	i = 1;
 	if (!av || !av[1])
 		return (NULL);
 	temp = ft_strdup("");

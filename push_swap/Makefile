@@ -74,33 +74,47 @@ SRC = main.c \
 	push_swap.c \
 	helpers.c
 
+# Updated paths for header and source files
+HEADER_PATH = i/
+SRC_PATH = src/
+BONUS_PATH = bonus/
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 OBJ_PATH = obj/
-OBJ_BONUS = $(BONUS:%.c=$(OBJ_PATH)%.o)
-OBJ = $(SRC:%.c=$(OBJ_PATH)%.o)
 
+# Generate object file names from source file names
+OBJ = $(SRC:%.c=$(OBJ_PATH)%.o)
+OBJ_BONUS = $(BONUS:%.c=$(OBJ_PATH)%.o)
+
+# Main target for push_swap
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $^ -o $@
 	@echo "Mandatory Part: Compilation done."
 
+# Bonus target for checker
 $(NAME_BONUS): $(OBJ_BONUS)
 	$(CC) $(CFLAGS) $^ -o $@
 	@echo "Bonus Part: Compilation done."
 
-$(OBJ_PATH)%.o: %.c | directories
-	$(CC) $(CFLAGS) -c $< -o $@
+# Rule to compile source files into object files
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c | directories
+	$(CC) $(CFLAGS) -I$(HEADER_PATH) -c $< -o $@
 
+# Rule to compile bonus source files into object files
+$(OBJ_PATH)%.o: $(BONUS_PATH)%.c | directories
+	$(CC) $(CFLAGS) -I$(HEADER_PATH) -c $< -o $@
+
+# Ensure 'all' depends on 'directories' and 'push_swap'
 all: directories $(NAME)
 
+# Ensure 'bonus' depends on 'directories' and 'checker'
+bonus: directories $(NAME_BONUS)
 
-bonus: $(NAME_BONUS)
-
-
-
+# Create obj directory
 directories:
 	mkdir -p $(OBJ_PATH)
 
+# Cleaning rules
 clean:
 	rm -rf $(OBJ_PATH)
 
@@ -109,4 +123,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus directories
+.PHONY: all clean fclean re directories bonus
+
+

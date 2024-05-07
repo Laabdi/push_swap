@@ -6,7 +6,7 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:53:21 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/01 17:20:55 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:22:38 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include "./getnextline/get_next_line.h"
 
 typedef struct s_list
 {
@@ -79,8 +80,8 @@ int					check_duplicates(char **s1);
 int					ft_is_sign(char nb);
 int					ft_is_digit(char nb);
 int					ft_strlen(char *s);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-char	*ft_strdup(const char *str);
+void				*ft_memcpy(void *dest, const void *src, size_t n);
+char				*ft_strdup(const char *str);
 int					num_cmp(char *s1, char *s2);
 char				**splited(char **av);
 char				*ft_strjoin(char *s1, char *s2);

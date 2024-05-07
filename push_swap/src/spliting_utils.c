@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:58 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/01 10:52:59 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:23:40 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -22,15 +22,9 @@ char	*ft_strjoin(char *s1, char *s2)
 	j = -1;
 	i = -1;
 	if (!s1)
-	{
-		s1 = malloc(1);
-		s1[0] = '\0';
-	}
+		s1 = ft_strdup("");
 	if (!s2)
-	{
-		s2 = malloc(1);
-		s2[0] = '\0';
-	}
+		s2 = ft_strdup("");
 	tlen = ft_strlen(s1) + ft_strlen(s2);
 	s = (char *)malloc(sizeof(char) * (tlen + 1));
 	if (!s)
@@ -90,9 +84,9 @@ static char	*malloc_strings(const char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t len;
-	size_t i;
-	char **src;
+	size_t	len;
+	size_t	i;
+	char	**src;
 
 	if (!s)
 		return (NULL);

@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:22 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/01 17:21:36 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:23:20 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	free_str_array(char **arr)
 {
@@ -35,7 +35,6 @@ int	main(int ac, char **av)
 	int		stack_size;
 	char	**nums;
 
-	nums = NULL;
 	if (ac < 2)
 		return (0);
 	nums = splited(av);
@@ -48,7 +47,6 @@ int	main(int ac, char **av)
 	}
 	stack_b = NULL;
 	stack_a = fill_stack(nums);
-	system("leaks push_swap");
 	stack_size = get_stack_size(stack_a);
 	assign_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);

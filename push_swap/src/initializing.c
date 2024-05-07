@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:43 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/01 10:52:44 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:23:18 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static long int	ft_atoi(const char *str)
 {
@@ -60,9 +60,9 @@ t_list	*fill_stack(char **str)
 
 void	assign_index(t_list *stack_a, int stack_size)
 {
-	t_list *highest;
-	t_list *ptr;
-	int value;
+	t_list	*highest;
+	t_list	*ptr;
+	int		value;
 
 	while (--stack_size > 0)
 	{

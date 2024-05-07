@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:48 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/01 14:14:59 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:23:24 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	is_sorted(t_list *stack)
 {
