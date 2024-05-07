@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:32:10 by mcombeau          #+#    #+#             */
-/*   Updated: 2024/05/05 18:23:36 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:08:36 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	push_all_save_three(t_list **stack_a, t_list **stack_b)
 {

@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:53:01 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/05 18:23:45 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/01 14:13:15 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	swap(t_list *stack)
 {

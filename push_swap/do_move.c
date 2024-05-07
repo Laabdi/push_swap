@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:36 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/05 18:23:09 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/01 14:08:51 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	do_rev_rotate_both(t_list **stack_a, t_list **stack_b, int *cost_a,
 		int *cost_b)

@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:00:25 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/05 18:23:06 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:04:58 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	arg_is_zero(char *av)
 {

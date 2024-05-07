@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:37 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/07 17:33:30 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/02 12:06:01 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	free_stack(t_list *stack)
 {
@@ -33,6 +33,6 @@ void	exit_error(t_list *stack_a, t_list *stack_b)
 		free_stack(stack_a);
 	if (!stack_b)
 		free_stack(stack_b);
-	write(1, "Error\n", 6);
+	write(1, "Error", 6);
 	exit(1);
 }

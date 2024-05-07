@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:30 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/05 18:22:57 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:52:31 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 void	get_cost(t_list **stack_a, t_list **stack_b)
 {

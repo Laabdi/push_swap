@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:58 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/05 18:23:40 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:12:28 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 char	*ft_strjoin(char *s1, char *s2)
 {

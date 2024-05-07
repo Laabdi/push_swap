@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:51 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/05 18:23:29 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:08:20 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static void	rev_rotate(t_list **stack)
 {

@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_handler.c                                 :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 10:52:37 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/07 17:33:30 by moaregra         ###   ########.fr       */
+/*   Created: 2024/05/01 10:52:50 by moaregra          #+#    #+#             */
+/*   Updated: 2024/05/01 14:14:44 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
-void	free_stack(t_list *stack)
+static void	push(t_list **src, t_list **dest)
 {
 	t_list	*tmp;
 
-	if (!stack)
+	if (*src == NULL)
 		return ;
-	while (stack)
-	{
-		tmp = stack->next;
-		free(stack);
-		stack = tmp;
-	}
-	stack = NULL;
+	tmp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = tmp;
 }
 
-void	exit_error(t_list *stack_a, t_list *stack_b)
+void	do_pa(t_list **stack_a, t_list **stack_b)
 {
-	if (!stack_a)
-		free_stack(stack_a);
-	if (!stack_b)
-		free_stack(stack_b);
-	write(1, "Error\n", 6);
-	exit(1);
+	push(stack_b, stack_a);
+	printf("pa\n");
+}
+
+void	do_pb(t_list **stack_a, t_list **stack_b)
+{
+	push(stack_a, stack_b);
+	printf("pb\n");
 }

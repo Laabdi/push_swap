@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:28 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/07 17:32:40 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:08:10 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	ft_is_sign(char nb)
 {
@@ -41,10 +41,6 @@ int	num_cmp(char *s1, char *s2)
 			i++;
 	}
 	else if (s2[j] == '+')
-		j++;
-	while (s1[i] && s1[i] == '0')
-		i++;
-	while (s2[j] && s2[j] == '0')
 		j++;
 	while (s1[i] && s2[j] && s1[i] == s2[j])
 	{

@@ -6,11 +6,11 @@
 /*   By: moaregra <moaregra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 10:52:54 by moaregra          #+#    #+#             */
-/*   Updated: 2024/05/05 18:23:33 by moaregra         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:09:33 by moaregra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 static int	find_highest_index(t_list *stack)
 {
