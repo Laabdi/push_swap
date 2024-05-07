@@ -33,6 +33,6 @@ void	exit_error(t_list *stack_a, t_list *stack_b)
 		free_stack(stack_a);
 	if (!stack_b)
 		free_stack(stack_b);
-	write(1, "error", 6);
+	write(1, "Error\n", 6);
 	exit(1);
 }
